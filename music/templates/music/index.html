@@ -1,3 +1,11 @@
+<html>
+<head>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<title> This is index Page </title>
+</head>
+
+<body>
 {% if all_album %}
     <h2> Here is your all Albums</h2>
     <ul>
@@ -8,3 +16,5 @@
 {% else %}
     <h2> NO Data available to display</h2>
 {% endif %}
+</body>
+</html>
