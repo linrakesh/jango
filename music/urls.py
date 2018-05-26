@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+app_name ="music"
 
 urlpatterns = [
     path('', views.index, name="index"),       #blank url    http://127.0.0.1
