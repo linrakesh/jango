@@ -1,20 +1,23 @@
-<html>
-<head>
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-<title> This is index Page </title>
-</head>
-
-<body>
-{% if all_album %}
-    <h2> Here is your all Albums</h2>
-    <ul>
-        {% for album in all_album %}
-            <li><a href="{% url 'music:detail' album.id %}"> {{album.album_title}}</a></li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <h2> NO Data available to display</h2>
-{% endif %}
-</body>
-</html>
+{% extends 'music/base.html' %}	
+{% block title %} World Music Player {% endblock %}
+{% block body %}
+	{% if all_album %}
+	    <h2> Here is your all Albums</h2>
+	    <div class="container-fluid">
+		  <div class="row">
+	        {% for album in all_album %}
+			    <div class="col-md-4">
+				  <div class="card mb-4 box-shadow">
+					<img class="card-img-top" src="{{album.album_logo}}" alt ="{{album.album_title}}"/>
+					<div class="card-body">
+						<a href="{% url 'music:detail' album.id %}"> {{album.album_title}}</a>
+					</div>
+					</div>
+				</div>
+	        {% endfor %}
+	    </div>
+		</div>
+	{% else %}
+	    <h2> NO Data available to display</h2>
+	{% endif %}
+{% endblock %}

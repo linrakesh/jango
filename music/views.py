@@ -34,3 +34,13 @@ def favorite(request,id):
             selected_song.is_favorite = True
         selected_song.save()
         return render(request,'music/detail.html',{'album':album})
+
+def emailer(request):
+    return render(request,'music/email.html',{})
+
+def result(request):
+    name = request.POST['name']
+    email = request.POST['email']
+    msg  = request.POST['msg']
+    context = {'name':name,'email':email,'msg':msg}
+    return render(request,'music/result.html',context)

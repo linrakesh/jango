@@ -1,1 +1,4 @@
-body{background:silver;color:#000;}
+.top{margin: 10px;}
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+#footer{background: #4a4a4a;color:#f1f1f1;padding:0 20px;margin-top:50px;height:50px;line-height:50px;}
+#footer p{margin:0;}
